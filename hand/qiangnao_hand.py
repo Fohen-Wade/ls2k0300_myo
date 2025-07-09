@@ -86,10 +86,10 @@ def execute_gesture(gesture):
         print("执行手势0 - 握拳")
         dex_hand.make_gesture(l_gesture_name="fist", r_gesture_name="none")
     elif gesture == b'\x01':
-        print("执行手势1 - 食指指")
+        print("执行手势1 - 伸食指")
         dex_hand.make_gesture(l_gesture_name="number_1", r_gesture_name="none")
     elif gesture == b'\x02':
-        print("执行手势2 - 哦也")
+        print("执行手势2 - 哦耶")
         dex_hand.make_gesture(l_gesture_name="victory", r_gesture_name="none")
     elif gesture == b'\x03':
         print("执行手势3 - OK")
@@ -104,7 +104,7 @@ def execute_gesture(gesture):
         print("执行手势6 - 点赞")
         dex_hand.make_gesture(l_gesture_name="thumbs-up", r_gesture_name="none")
     elif gesture == b'\x07':
-        print("执行手势7 - 数字7")
+        print("执行手势7 - 数字七")
         dex_hand.make_gesture(l_gesture_name="number_7", r_gesture_name="none")
     elif gesture == b'\x08':
         print("执行手势8 - 摇滚")
