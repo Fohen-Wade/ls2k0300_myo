@@ -189,8 +189,9 @@ python3 -m venv --system-site-packages /home/ls2k0300_myo/ls2k0300_myoV
 **出现原因2：**
 从龙芯官方下载的python软件包版本不兼容高版本的python，导致无法正常import
 **解决方案：**
-获取numpy源码，从源码编译得到二进制包，安装
-参考：https://blog.csdn.net/qq_37333800/article/details/136009179?spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-136009179-blog-132041971.235%5Ev43%5Epc_blog_bottom_relevance_base7&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-136009179-blog-132041971.235%5Ev43%5Epc_blog_bottom_relevance_base7&utm_relevant_index=12
+获取numpy源码，从源码交叉编译得到二进制包，安装
+参考：
+https://blog.csdn.net/qq_37333800/article/details/136009179?spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-136009179-blog-132041971.235%5Ev43%5Epc_blog_bottom_relevance_base7&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-136009179-blog-132041971.235%5Ev43%5Epc_blog_bottom_relevance_base7&utm_relevant_index=12
 
 ### Q2: 识别准确率低
 **建议：**
