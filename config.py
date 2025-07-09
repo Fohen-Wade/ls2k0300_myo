@@ -13,7 +13,7 @@ K = 5                             # KNN的K值
 SUBSAMPLE = 3                         # 降采样系数
 
 #UDP参数
-UDP_IP = "192.168.5.3"  # ROS主机IP
+UDP_IP = "192.168.85.32"  # ROS主机IP
 UDP_PORT = 8888  # ROS主机端口
 SEND_FREQ = 10.0  # 发送频率(Hz) - 10Hz
 

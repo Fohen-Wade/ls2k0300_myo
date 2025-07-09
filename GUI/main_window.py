@@ -395,15 +395,35 @@ class EMGControlGUI(QtWidgets.QMainWindow):
 
     def get_gesture_name(self, gesture_id):
         """根据手势ID获取手势名称"""
-        names = {-1: "无手势", 0: "松弛", 1: "握拳", 2: "五指张开", 3: "伸食指",
-                 4: "点赞", 5: "OK", 6: "伸小拇指", 7: "哦耶", 8: "手势8", 9: "手势9"}
+        names = {
+            -1: "无手势",
+            0: "握拳",
+            1: "伸食指",
+            2: "哦耶",
+            3: "OK",
+            4: "数字四",
+            5: "松弛",
+            6: "点赞",
+            7: "鹰爪",
+            8: "摇滚",
+            9: "夹吸管"
+        }
         return names.get(gesture_id, "未知手势")
 
     def update_gesture_icon(self, gesture_id):
         """更新手势图标（英文名称）"""
-        icons = {1: "Fisting", 2: "Fingers spreading", 3: "Forefinger extending",
-                 4: "Thumbs-uping", 5: "No problem", 6: "Little fingerextending",
-                 7: "Victory"}
+        icons = {
+            0: "Fist",
+            1: "Number_1",
+            2: "Victory",
+            3: "Number_3",
+            4: "Number_4",
+            5: "none",
+            6: "Thumbs-up",
+            7: "Number_7",
+            8: "Rock and Roll",
+            9: "Hole something"
+        }
 
         self.gesture_icon.setText(icons.get(gesture_id, ""))
 
