@@ -9,7 +9,7 @@ MYO_CONNECTION_TIMEOUT = 10           # 连接超时(秒)
 MYO_SAMPLING_RATE = 50                # 采样率(Hz)
 
 # 分类器参数
-K = 5                             # KNN的K值
+K = 15                             # KNN的K值
 SUBSAMPLE = 3                         # 降采样系数
 
 #UDP参数
