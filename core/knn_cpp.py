@@ -4,14 +4,14 @@ import os
 import numpy as np
 import time
 
-
+from config import K
 class KNNClassifier:
-    def __init__(self, k=5, max_samples=1500, lib_path="core/libknn.so"):
+    def __init__(self, k=K, max_samples=1500, lib_path="core/libknn.so"):
         """
         初始化C++ KNN分类器
 
         参数:
-            k: KNN算法的K值（默认5）
+            k: KNN算法的K值（默认15）
             max_samples: 每个类别加载的最大样本数（默认1500）
             lib_path: C++库的路径（默认"libknn.so"）
         """

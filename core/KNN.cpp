@@ -14,9 +14,16 @@
 
 class KNNTrainer {
 public:
-    KNNTrainer(int k = 5, int max_samples = 1500) 
+    KNNTrainer(int k = 15, int max_samples = 1500)
         : k(k), max_samples(max_samples), trained(false) {}
-    
+    //若想修改K的值
+    void set_k(int new_k) {
+        if (new_k > 0) {
+            k = new_k;
+        } else {
+            std::cerr << "警告: k值必须为正数，保持原值" << std::endl;
+        }
+    }
     void load_data(const std::string& base_path) {
         samples.clear();
         labels.clear();
@@ -205,6 +212,10 @@ extern "C" {
         auto result = classifier->classify(q);
         *prediction = result.first;
         *confidence = result.second;
+    }
+    // 添加设置k值的函数
+    void knn_set_k(KNNTrainer* classifier, int new_k) {
+        classifier->set_k(new_k);
     }
     
     // 销毁KNN分类器对象
