@@ -6,7 +6,7 @@ import time
 import numpy as np
 from PyQt5.QtCore import pyqtSignal, QThread
 
-from config import K, SUBSAMPLE, BUFFER_SIZE
+from config import K, SUBSAMPLE, BUFFER_SIZE,PROCESS_INTERVAL,FLUSH_INTERVAL,STORE_INTERVAL
 from device.pyomyo import emg_mode, Myo
 
 
@@ -36,9 +36,9 @@ class DataManager(object):
         self.read_data()
 
         self.last_store_time = 0
-        self.store_interval = 0.02  # 两次存储之间的最小间隔
+        self.store_interval = STORE_INTERVAL  # 两次存储之间的最小间隔
         self.last_flush_time = time.time()
-        self.flush_interval = 1.0  # 每1秒刷新一次缓冲区到文件
+        self.flush_interval = FLUSH_INTERVAL  # 每1秒刷新一次缓冲区到文件
 
     def store_data(self, cls, vals):
         """存储数据到缓冲区，减少文件写入频率"""
@@ -209,7 +209,7 @@ class MyoWorker(QThread):
         self.running = False    # 线程运行标志
         self.connected = False  # 设备连接状态
         self.last_process_time = 0  # 最后处理时间
-        self.process_interval = 0.02 # 处理间隔(50Hz)
+        self.process_interval = PROCESS_INTERVAL # 处理间隔(50Hz
 
     def connect_myo(self):
         """连接Myo设备"""
@@ -246,10 +246,10 @@ class MyoWorker(QThread):
 
         self.running = True
         try:
-            # 使用Myo的运行方法代替waitForNotifications
+            # 使用Myo的运行方法代替
             while self.running:
                 self.myo.run()      # 处理Myo数据
-                time.sleep(0.005)  # 减轻CPU负担
+                # time.sleep(0.005)  # 减轻CPU负担
         except Exception as e:
             print(f"Myo工作线程错误: {e}")
         finally:
