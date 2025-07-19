@@ -15,7 +15,11 @@ SUBSAMPLE = 3                         # 降采样系数
 #UDP参数
 UDP_IP = "192.168.85.32"  # ROS主机IP
 UDP_PORT = 8888  # ROS主机端口
-SEND_FREQ = 10.0  # 发送频率(Hz) - 10Hz
+SEND_FREQ = 50.0  # 发送频率(Hz) - 50Hz
 
 #数据缓冲区
-BUFFER_SIZE = 20  # 缓冲20个数据点后再写入文件
+BUFFER_SIZE = 50  # 缓冲50个数据点后再写入文件
+
+PROCESS_INTERVAL=0.02 # 处理接收间隔(50Hz)
+STORE_INTERVAL = 0.02  # 两次存储之间的最小间隔
+FLUSH_INTERVAL = 1.0  # 每1秒刷新一次缓冲区到文件
